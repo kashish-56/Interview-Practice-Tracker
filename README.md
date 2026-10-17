@@ -1,123 +1,185 @@
-# Interview Practice Tracker
+# 🎯 Interview Practice Tracker
 
-A responsive dashboard where a student can track their weekly interview preparation: DSA problems, Git questions and technical questions. It is a frontend-only project, so there is no backend and all data is saved in the browser using `localStorage`.
+A responsive React dashboard to organize and track weekly interview preparation in one place. Manage **DSA problems, Git questions, technical interview questions, and machine coding progress** with an easy-to-use interface.
 
-- **Live demo:** `<add your deployed link here>`
-- **Demo video:** `<add your 1-2 minute video link here>`
+Built with React, Vite, and Tailwind CSS, this frontend-only application uses browser `localStorage` to persist your progress without requiring a backend.
 
-## Features
+## 🚀 Live Demo
 
-**Dashboard**
-- Total number of questions
-- Completed DSA problems
-- Completed interview questions (Git + Technical)
-- Machine coding status (Not Started / In Progress / Completed)
-- Progress bar showing the overall completion percentage
+- **Live Website:** [Add your deployed link here]
+- **Demo Video:** [Add your 1–2 minute demo video link here]
+- **GitHub Repository:** [Add your repository link here]
 
-**Question tracker**
-- Add a question with a category (DSA / Git / Technical), difficulty (Easy / Medium / Hard) and status (Pending / In Progress / Completed)
-- Change the status of a question directly from the list
-- Delete a question
+## ✨ Features
 
-**Search and filters**
-- Search questions by title
-- Filter by category, status and difficulty
-- All filters work together
-- "Clear" button to reset everything
+### 📊 Dashboard
+- View the total number of interview questions.
+- Track completed DSA problems.
+- Monitor completed Git and technical interview questions.
+- Update machine coding progress: Not Started, In Progress, or Completed.
+- Visualize overall preparation progress with a dynamic progress bar.
 
-**Other**
-- Data stays saved after refreshing the page (`localStorage`)
-- Responsive design for desktop and mobile
-- Empty state when there are no questions
-- "No results found" state when search or filters match nothing
-- Form validation (question cannot be empty and needs at least 3 characters)
+### 📝 Question Management
+- Add questions under DSA, Git, or Technical categories.
+- Assign difficulty levels: Easy, Medium, or Hard.
+- Track status: Pending, In Progress, or Completed.
+- Update question status directly from the question list.
+- Delete questions when they are no longer needed.
+- Validate question titles to prevent empty or too-short entries.
 
-## Tech stack
+### 🔍 Search & Filters
+- Search questions by title.
+- Filter by category, difficulty, and status.
+- Combine multiple filters to find specific questions.
+- Reset all search and filter selections with the Clear button.
 
-| Tool | Purpose |
-| --- | --- |
-| React 18 | UI and components |
-| Vite 5 | Dev server and build tool |
-| Tailwind CSS v4 | Styling (via `@tailwindcss/vite`) |
-| localStorage | Saving data in the browser |
+### 💾 Data Persistence
+- Automatically save questions and machine coding status in `localStorage`.
+- Restore saved data after refreshing the page.
+- Keep your preparation progress available without a backend.
 
-## Getting started
+### 📱 Responsive UI & User Experience
+- Responsive layout for desktop and mobile screens.
+- Empty state when no questions have been added.
+- No-results state when a search or filter returns no matches.
+- Reusable React components for a maintainable codebase.
 
-### Requirements
+## 🛠️ Tech Stack
 
-- Node.js 18 or above
-- npm
+| Technology | Purpose |
+|---|---|
+| React 18 | Building the user interface |
+| Vite 5 | Development server and production builds |
+| Tailwind CSS v4 | Responsive styling |
+| JavaScript (ES6+) | Application logic and interactivity |
+| React Hooks | State management and side effects |
+| localStorage | Client-side data persistence |
+| HTML5 | Application structure |
 
-### Steps
+## 📂 Project Structure
 
-```bash
-# 1. go to the project folder
-cd practice-tracker
-
-# 2. install dependencies
-npm install
-
-# 3. start the development server
-npm run dev
-```
-
-Open the URL shown in the terminal (usually http://localhost:5173).
-
-### Other commands
-
-```bash
-npm run build     # creates the production build in the dist/ folder
-npm run preview   # previews the production build locally
-```
-
-## Project structure
-
-```
+```text
 practice-tracker/
 ├── index.html
 ├── package.json
-├── vite.config.js             # react + tailwind plugins
+├── vite.config.js
 └── src/
-    ├── main.jsx               # entry point
-    ├── App.jsx                # main state, localStorage and filtering logic
-    ├── index.css              # imports tailwind
+    ├── main.jsx
+    ├── App.jsx
+    ├── index.css
     └── components/
-        ├── Dashboard.jsx      # stat boxes + progress bar
-        ├── ProgressBar.jsx    # completion percentage bar
-        ├── QuestionForm.jsx   # add question form with validation
-        ├── Filters.jsx        # search + category/status/difficulty filters
-        ├── QuestionList.jsx   # list of questions + empty states
-        └── QuestionItem.jsx   # a single question row
+        ├── Dashboard.jsx
+        ├── ProgressBar.jsx
+        ├── QuestionForm.jsx
+        ├── Filters.jsx
+        ├── QuestionList.jsx
+        └── QuestionItem.jsx
 ```
 
-## How it works
+## ⚙️ Getting Started
 
-- `App.jsx` keeps all the main state: the list of questions, the machine coding status and the current filters.
-- Whenever the questions or machine coding status change, a `useEffect` saves them to `localStorage`. On page load they are read back from `localStorage`.
-- The filtered list is calculated in `App.jsx` by checking the search text, category, status and difficulty of each question.
-- `Dashboard.jsx` calculates the numbers from the questions list:
-  - DSA completed = questions with category DSA and status Completed
-  - Interview questions completed = questions with category Git or Technical and status Completed
-  - Progress % = completed questions / total questions x 100
-- Smaller components only receive data and functions through props.
+### Prerequisites
 
-## Assumptions
+Make sure you have installed:
 
-- "Interview questions completed" is counted as completed questions in the **Git** and **Technical** categories. "DSA completed" is counted from the **DSA** category.
-- Machine coding is not one of the question categories, so its status is a manual dropdown on the dashboard.
-- The progress percentage is calculated from all stored questions, and only questions with status **Completed** are counted as done.
-- Data is stored per browser. Clearing the browser data or using another browser or device will show an empty tracker.
+- [Node.js](https://nodejs.org/) (version 18 or above)
+- npm (included with Node.js)
 
-## Deployment
+### Installation
 
-The project is a static site, so it can be deployed on Vercel, Netlify or GitHub Pages.
+**1. Clone the repository**
+
+```bash
+git clone <your-github-repository-url>
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd practice-tracker
+```
+
+**3. Install dependencies**
+
+```bash
+npm install
+```
+
+**4. Start the development server**
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal, usually `http://localhost:5173`.
+
+### Available Scripts
+
+```bash
+npm run dev      # Start the development server
+npm run build    # Create the production build
+npm run preview  # Preview the production build locally
+```
+
+## 🧠 How It Works
+
+- **State management:** `App.jsx` manages the question list, machine coding status, and active filters using React state.
+- **Data persistence:** React's `useEffect` saves changes to `localStorage`. Previously saved data is loaded when the application initializes.
+- **Search and filtering:** The application filters questions by title, category, difficulty, and status. Multiple filters can be applied simultaneously.
+- **Dashboard calculations:** Dashboard statistics are derived from the stored questions instead of being maintained separately.
+- **Component-based architecture:** Each component has a specific responsibility and receives the necessary data and functions through props.
+
+### 📈 Progress Calculation
+
+The dashboard uses the following logic:
+
+- **DSA Completed:** Number of DSA questions marked Completed.
+- **Interview Questions Completed:** Number of Git and Technical questions marked Completed.
+- **Overall Progress:** Percentage of all questions marked Completed.
+
+\[
+\text{Progress} =
+\frac{\text{Completed Questions}}{\text{Total Questions}}
+\times 100
+\]
+
+When there are no questions, the overall progress is displayed as 0%.
+
+## 📌 Design Assumptions
+
+- Interview questions include both Git and Technical categories.
+- Machine coding progress is tracked separately from individual questions.
+- Only questions marked Completed contribute to the overall completion percentage.
+- Data is stored locally in the browser and is not synchronized across devices.
+- Clearing browser storage may remove saved application data.
+
+## 🌐 Deployment
+
+This project can be deployed as a static website using **Vercel, Netlify, or GitHub Pages**.
+
+**Build settings:**
 
 - Build command: `npm run build`
 - Output directory: `dist`
 
-## Possible improvements
+For Vercel, connect your GitHub repository and use the recommended Vite build settings.
 
-- Edit an existing question
-- Add due dates for each week
-- Export or import data as a JSON file
-- Dark mode
+## 🔮 Future Improvements
+
+- [ ] Edit existing questions.
+- [ ] Add weekly goals and due dates.
+- [ ] Export and import preparation data as JSON.
+- [ ] Add dark mode.
+- [ ] Display weekly and monthly progress analytics.
+- [ ] Add streak tracking and daily preparation reminders.
+- [ ] Integrate a backend and database for cross-device synchronization.
+
+## 🎯 Project Goal
+
+The goal of this project is to make interview preparation more organized and measurable by bringing coding practice, technical revision, and machine coding progress into a single dashboard.
+
+It also demonstrates practical frontend development skills, including reusable React components, state management, form validation, filtering, responsive UI design, and browser-based data persistence.
+
+---
+
+**Built with ❤️ using React and Tailwind CSS.**
