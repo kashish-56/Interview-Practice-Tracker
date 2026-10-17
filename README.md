@@ -6,9 +6,8 @@ Built with React, Vite, and Tailwind CSS, this frontend-only application uses br
 
 ## 🚀 Live Demo
 
-- **Live Website:** [Add your deployed link here]
-- **Demo Video:** [Add your 1–2 minute demo video link here]
-- **GitHub Repository:** [Add your repository link here]
+- **Live Website:** [https://interview-practice-tracker-dusky.vercel.app/]
+- **GitHub Repository:** [https://github.com/kashish-56/Interview-Practice-Tracker]
 
 ## ✨ Features
 
